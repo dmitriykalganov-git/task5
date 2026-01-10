@@ -1,7 +1,7 @@
 #ifndef __CIRCLE
 #define __CIRCLE
 
-#include "model.cpp"
+#include "model.h"
 
 //-----------Circle Model ------------------------
 

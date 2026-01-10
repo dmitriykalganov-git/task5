@@ -1,6 +1,6 @@
-#include "model.cpp"
-#include "View.cpp"
-#include "Controller.cpp"
+#include "model.h"
+#include "View.h"
+#include "Controller.h"
 
 
 int main()
@@ -14,6 +14,6 @@ int main()
    Controller controller(&line);
    controller.AddModel(&line1);
    controller.AddModel(&circle);
-    controller.start();
+   controller.start();
    return 0;
 }

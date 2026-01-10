@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "model.cpp"
+#include "model.h"
 
 
 class Document

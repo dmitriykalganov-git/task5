@@ -1,11 +1,12 @@
 #include <iostream>
-#include "model.cpp"
+#include "model.h"
 #include "line_model.h"
 #include "circle_model.h"
+#include "IController.h"
 
 //--------------- Controller ------------
 
-class Controller
+class Controller : public IController
 {
 public:
    Controller(LineModel *model)
