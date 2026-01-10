@@ -1,7 +1,7 @@
 #ifndef __LINE
 #define __LINE  
 
-#include "model.cpp"
+#include "model.h"
 
 //-----------Line Model ------------------------
 
