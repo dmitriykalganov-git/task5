@@ -5,11 +5,12 @@
 #include "model.h"
 #include "line_model.h"
 #include "circle_model.h"
+#include "iview.h"
 
 
-//------------------- View ------------
+//------------------- View console------------
 
-class ConsoleView: public Observer
+class ConsoleView: public Observer, IView
 {
 public:
    ConsoleView(LineModel *model)

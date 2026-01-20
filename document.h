@@ -4,10 +4,11 @@
 #include <vector>
 #include <string>
 
-#include "model.h"
+#include "ishape.h"
 
+//------------------- View document------------
 
-class Document
+class Document: public IView
 {
 public:
     /// Clears a new document.
@@ -27,11 +28,11 @@ public:
     }
 
     /// Adds a shape.
-    void AddShape(std::shared_ptr<Observable> shape)
+    void AddShape(std::shared_ptr<IShape> shape)
     {
         shapes.push_back(shape);
     }
 
 private:
-    std::vector<std::shared_ptr<Observable>> shapes;
+    std::vector<std::shared_ptr<IShape>> shapes;
 };
