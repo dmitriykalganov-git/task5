@@ -1,0 +1,66 @@
+\doxysection{View.\+h}
+\hypertarget{View_8h_source}{}\label{View_8h_source}\mbox{\hyperlink{View_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_VIEW}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_VIEW\ \ }}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8h}{model.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{line__model_8h}{line\_model.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{circle__model_8h}{circle\_model.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{iview_8h}{iview.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ View\ console-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConsoleView}{ConsoleView}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classObserver}{Observer}},\ \mbox{\hyperlink{classIView}{IView}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \mbox{\hyperlink{classConsoleView_ac25eb158389675cb7910b5caccb0342c}{ConsoleView}}(\mbox{\hyperlink{classLineModel}{LineModel}}\ *model)}
+\DoxyCodeLine{00017\ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \_line\ =\ model;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \_line-\/>\mbox{\hyperlink{classObservable_a1bf10d9e6daae30710652adc96a59153}{addObserverL}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \_lineVec.push\_back(\_line);}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConsoleView_aa7350bba2419e719ef91871f3fd1289b}{AddModel}}(\mbox{\hyperlink{classCircleModel}{CircleModel}}\ *model)}
+\DoxyCodeLine{00023\ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \_circle\ =\ model;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \_circle-\/>\mbox{\hyperlink{classObservable_a0617dd2eaf13256d4019c2aa2ede1100}{addObserverC}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \_circleVec.push\_back(\_circle);}
+\DoxyCodeLine{00027\ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConsoleView_a5b3f427ab8b39e453fe5e243cf72070b}{AddModel}}(\mbox{\hyperlink{classLineModel}{LineModel}}\ *model)}
+\DoxyCodeLine{00029\ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \_line\ =\ model;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \_line-\/>\mbox{\hyperlink{classObservable_a1bf10d9e6daae30710652adc96a59153}{addObserverL}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \_lineVec.push\_back(\_line);}
+\DoxyCodeLine{00033\ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConsoleView_a23103f945208d8fc320251eafe33c33f}{updateL}}()}
+\DoxyCodeLine{00035\ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ \_lineVec.size();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ ++i)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Line:\ \%d\(\backslash\)n"{}},\ i);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Starting\ point:\ \%.2f\ \%.2f\(\backslash\)n"{}},\ \_lineVec[i]-\/>getA().x,\ \_lineVec[i]-\/>getA().y);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}End\ point:\ \%.2f\ \%.2f\(\backslash\)n"{}},\ \_lineVec[i]-\/>getB().x\ ,\ \_lineVec[i]-\/>getB().y);}
+\DoxyCodeLine{00042\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ printf("{}Input\ the\ coordinates\ point\ LINE:\ "{});}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \}\ }
+\DoxyCodeLine{00045\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConsoleView_a3dd12fbb8780ef7079db7cf3afd09a1d}{updateC}}()}
+\DoxyCodeLine{00046\ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size\ =\ \_circleVec.size();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ ++i)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Center\ point:\ \%.2f\ \%.2f\(\backslash\)n"{}},\ \_circle-\/>\mbox{\hyperlink{classCircleModel_a6dc738a37e500a0acb698e72ad9f1f5b}{getС}}().\mbox{\hyperlink{structPoint_a05dfe2dfbde813ad234b514f30e662f1}{x}},\ \_circle-\/>\mbox{\hyperlink{classCircleModel_a6dc738a37e500a0acb698e72ad9f1f5b}{getС}}().\mbox{\hyperlink{structPoint_a6101960c8d2d4e8ea1d32c9234bbeb8d}{y}}\ );}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Radius:\ \%.2f\(\backslash\)n"{}},\ \_circle-\/>\mbox{\hyperlink{classCircleModel_ab996dd761e389e6475c3965c5ae6b6e1}{getR}}());}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \}\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ std::vector<LineModel*>\ \_lineVec;}
+\DoxyCodeLine{00057\ \ \ \ \mbox{\hyperlink{classLineModel}{LineModel}}\ *\_line;}
+\DoxyCodeLine{00058\ \ \ \ std::vector<CircleModel*>\ \_circleVec;}
+\DoxyCodeLine{00059\ \ \ \ \mbox{\hyperlink{classCircleModel}{CircleModel}}\ *\_circle;}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

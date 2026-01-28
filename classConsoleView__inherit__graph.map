@@ -1,0 +1,7 @@
+<map id="ConsoleView" name="ConsoleView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="37,79,136,104"/>
+<area shape="rect" id="Node000002" href="$classObserver.html" title=" " alt="" coords="5,5,80,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,41,82,77,77,80,55,44"/>
+<area shape="rect" id="Node000003" href="$classIView.html" title=" " alt="" coords="105,5,159,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,44,96,80,92,77,115,41"/>
+</map>
